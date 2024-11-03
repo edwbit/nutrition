@@ -3,7 +3,7 @@ from typing import Generator
 from groq import Groq
 
 # Set up the page configuration
-st.set_page_config(page_icon="🚀", layout="centered", page_title="Groq Super Chat")
+st.set_page_config(page_icon="🚀", layout="centered", page_title="Groq Nutribot")
 
 # Add Sidebar Menu
 st.sidebar.title("Groq Super Chat")  # App name
@@ -76,7 +76,7 @@ def generate_chat_responses(chat_completion) -> Generator[str, None, None]:
 # Handle new chat input
 if prompt := st.chat_input("Type the vegetable or fruit name"):
     #task requirements
-    task_requirements = """ Provide the History, Scientific Name, Nutritional Facts, Medicinal Properties, Diseases it can prevent or cure, Preparation and consumption of {prmpt}"""
+    task_requirements = f""" Provide the History, Scientific Name, Nutritional Facts, Medicinal Properties, Diseases it can prevent or cure, Preparation and consumption of {prompt}"""
 
     st.session_state.messages.append({"role": "user", "content": f"{task_requirements} \nProvide links to source if you can"})
 
