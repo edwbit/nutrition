@@ -6,7 +6,7 @@ from groq import Groq
 st.set_page_config(page_icon="🚀", layout="centered", page_title="Groq Nutribot")
 
 # Add Sidebar Menu
-st.sidebar.title("Groq Groq Nutribot")  # App name
+st.sidebar.title("Groq Nutribot")  # App name
 st.sidebar.caption("App created by AI")
 api_key = st.sidebar.text_input("Enter your API key and press Enter", type="password")
 
