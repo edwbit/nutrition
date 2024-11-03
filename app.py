@@ -60,7 +60,7 @@ max_tokens = st.slider(
 if st.session_state.messages:
     st.markdown('<div class="chat-container">', unsafe_allow_html=True)
     for message in st.session_state.messages:
-        avatar = '🫀' if message["role"] == "assistant" else '🦲'
+        avatar = '👨‍⚕️' if message["role"] == "assistant" else '🦲'
         with st.chat_message(message["role"], avatar=avatar):
             st.markdown(message["content"])
     st.markdown('</div>', unsafe_allow_html=True)
@@ -93,7 +93,7 @@ if prompt := st.chat_input("Type the vegetable or fruit name"):
             max_tokens=max_tokens,
             stream=True
         )
-        with st.chat_message("assistant", avatar="🫀"):
+        with st.chat_message("assistant", avatar="👨‍⚕️"):
             chat_responses_generator = generate_chat_responses(chat_completion)
             full_response = st.write_stream(chat_responses_generator)
     except Exception as e:
