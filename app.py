@@ -6,7 +6,7 @@ from groq import Groq
 st.set_page_config(page_icon="🚀", layout="centered", page_title="Groq Nutribot")
 
 # Add Sidebar Menu
-st.sidebar.title("Groq Super Chat")  # App name
+st.sidebar.title("Groq Groq Nutribot")  # App name
 st.sidebar.caption("App created by AI")
 api_key = st.sidebar.text_input("Enter your API key and press Enter", type="password")
 
@@ -16,7 +16,7 @@ if st.sidebar.button("New Chat"):
 # Initialize the Groq client with the provided API key
 client = Groq(api_key=api_key)
 
-st.subheader("Super Chat", divider="rainbow", anchor="false")
+st.subheader("Nutribot", divider="rainbow", anchor="false")
 
 # Initialize chat history and selected model
 if "messages" not in st.session_state:
@@ -76,7 +76,7 @@ def generate_chat_responses(chat_completion) -> Generator[str, None, None]:
 # Handle new chat input
 if prompt := st.chat_input("Type the vegetable or fruit name"):
     #task requirements
-    task_requirements = f""" Provide the History, Scientific Name, Nutritional Facts, Medicinal Properties, Diseases it can prevent or cure, Preparation and consumption of {prompt}"""
+    task_requirements = f""" Provide the History, Scientific Name, Nutritional Facts, Medicinal Properties, Diseases it can prevent or cure, Preparation and consumption, Filipino Recipes of of {prompt}"""
 
     st.session_state.messages.append({"role": "user", "content": f"{task_requirements} \nProvide links to source if you can"})
 
