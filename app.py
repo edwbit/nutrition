@@ -27,7 +27,7 @@ if "selected_model" not in st.session_state:
 
 # Define model details
 models = {
-    "llama-3.3-70b-versatile": {"name": "llama-3.3-70b-versatile", "tokens": 128000},
+    "llama-3.3-70b-versatile": {"name": "llama-3.3-70b-versatile", "tokens": 32768},
     "llama-3.1-70b-versatile": {"name": "llama-3.1-70b-versatile", "tokens": 8000},
     "mixtral-8x7b-32768": {"name": "Mixtral-8x7b-Instruct-v0.1", "tokens": 32768},
 }
@@ -51,7 +51,7 @@ max_tokens = st.slider(
     "Max Tokens:",
     min_value=1024,
     max_value=max_tokens_range,
-    value=min(128000, max_tokens_range),
+    value=min(32768, max_tokens_range),
     step=1024,
     help=f"Adjust the maximum number of tokens (words) for the model's response. Max for selected model: {max_tokens_range}"
 )
