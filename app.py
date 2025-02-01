@@ -76,7 +76,7 @@ def generate_chat_responses(chat_completion) -> Generator[str, None, None]:
 # Handle new chat input
 if prompt := st.chat_input("Type the vegetable or fruit name"):
     #task requirements
-    task_requirements = f""" Provide the History, Scientific Name, Nutritional Facts Table with description, Medicinal Properties Table, Diseases Table -it can prevent or cure, Glycemic index compared with white rice. Preparation and consumption of {prompt}"""
+    task_requirements = f""" Provide the History, Scientific Name, Nutritional Facts Table with description, Tanle of Medicinal Properties, Table of Diseases it can prevent or cure, Glycemic index compared with white rice. Preparation and consumption of {prompt}"""
 
     st.session_state.messages.append({"role": "user", "content": f"{task_requirements} \nProvide links to source if you can"})
 
