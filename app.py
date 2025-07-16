@@ -79,7 +79,7 @@ if prompt := st.chat_input("Type the vegetable or fruit name"):
     #task requirements
     task_requirements = f""" Provide the History, Scientific Name, Nutritional Facts Table with description, Table of Medicinal Properties, Table of Diseases it can prevent or cure, Glycemic index compared with white rice. Contraindications. Preparation and consumption of {prompt}"""
 
-    st.session_state.messages.append({"role": "user", "content": f"{task_requirements} \nProvide links to source if you can"})
+    st.session_state.messages.append({"role": "user", "content": f"{task_requirements}"})
 
     with st.chat_message("user", avatar='🦲'):
         st.markdown(prompt)
