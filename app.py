@@ -92,6 +92,7 @@ if prompt := st.chat_input("Type the vegetable or fruit name"):
             ],
             max_tokens=max_tokens,
             stream=True
+            reasoning_format="hidden"
         )
         with st.chat_message("assistant", avatar="👨‍⚕️"):
             chat_responses_generator = generate_chat_responses(chat_completion)
