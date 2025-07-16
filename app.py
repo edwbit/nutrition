@@ -105,5 +105,5 @@ if prompt := st.chat_input("Type the vegetable or fruit name"):
             # Handle case where full_response is an iterable (list/generator)
             combined_response = "\n".join(str(item) for item in full_response)
             st.session_state.messages.append({"role": "assistant", "content": combined_response})
-     except Exception as e:
+    except Exception as e:
         st.error(e, icon="🚨")
