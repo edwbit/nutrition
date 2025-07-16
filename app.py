@@ -85,25 +85,25 @@ if prompt := st.chat_input("Type the vegetable or fruit name"):
         st.markdown(prompt)
 
     try:
-    chat_completion = client.chat.completions.create(
-        model=model_option,
-        messages=[
-            {"role": m["role"], "content": m["content"]}
-            for m in st.session_state.messages
-        ],
-        max_tokens=max_tokens,
-        stream=True,
-        reasoning_format="hidden"
-    )
-    with st.chat_message("assistant", avatar="👨‍⚕️"):
-        chat_responses_generator = generate_chat_responses(chat_completion)
-        full_response = st.write_stream(chat_responses_generator)
-
-    if isinstance(full_response, str):
-        st.session_state.messages.append({"role": "assistant", "content": full_response})
-    else:
-        # Handle case where full_response is an iterable (list/generator)
-        combined_response = "\n".join(str(item) for item in full_response)
-        st.session_state.messages.append({"role": "assistant", "content": combined_response})
-    except Exception as e:
-       st.error(e, icon="🚨")
+        chat_completion = client.chat.completions.create(
+            model=model_option,
+            messages=[
+                {"role": m["role"], "content": m["content"]}
+                for m in st.session_state.messages
+            ],
+            max_tokens=max_tokens,
+            stream=True,
+            reasoning_format="hidden"
+        )
+        with st.chat_message("assistant", avatar="👨‍⚕️"):
+            chat_responses_generator = generate_chat_responses(chat_completion)
+            full_response = st.write_stream(chat_responses_generator)
+    
+        if isinstance(full_response, str):
+            st.session_state.messages.append({"role": "assistant", "content": full_response})
+        else:
+            # Handle case where full_response is an iterable (list/generator)
+            combined_response = "\n".join(str(item) for item in full_response)
+            st.session_state.messages.append({"role": "assistant", "content": combined_response})
+     except Exception as e:
+        st.error(e, icon="🚨")
