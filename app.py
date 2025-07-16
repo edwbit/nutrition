@@ -29,7 +29,7 @@ if "selected_model" not in st.session_state:
 models = {
     "llama-3.3-70b-versatile": {"name": "llama-3.3-70b-versatile", "tokens": 32768},
     "deepseek-r1-distill-llama-70b": {"name": "deepseek-r1-distill-llama-70b", "tokens": 32768},
-    "qwen/qwen3-32b": {"name": "qwen/qwen3-32b", "tokens": 131072},
+    "qwen/qwen3-32b": {"name": "qwen/qwen3-32b", "tokens": 40960},
 }
 
 # Layout for model selection and max token slider
