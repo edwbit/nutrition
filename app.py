@@ -92,7 +92,7 @@ if prompt := st.chat_input("Type the vegetable or fruit name"):
                 for m in st.session_state.messages
             ],
             max_tokens=max_tokens,
-            stream=True
+            stream=True,
             reasoning_format="hidden"
         )
         with st.chat_message("assistant", avatar="👨‍⚕️"):
