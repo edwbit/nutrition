@@ -1,4 +1,4 @@
-import streamlit as st
+iimport streamlit as st
 from typing import Generator
 from groq import Groq
 
@@ -77,7 +77,15 @@ def generate_chat_responses(chat_completion) -> Generator[str, None, None]:
 # Handle new chat input
 if prompt := st.chat_input("Type the vegetable or fruit name"):
     #task requirements
-    task_requirements = f""" Provide the History, Scientific Name, Nutritional Facts Table with description, Table of Medicinal Properties, Table of Diseases it can prevent or cure, Glycemic index compared with white rice. Contraindications. Preparation and consumption of {prompt}"""
+    task_requirements = f""" 
+    A. Provide the SHOrt History and Scientific Name
+    B. Nutritional Facts Table with description
+    C. Table of Medicinal Properties
+    D. Table of Diseases it can prevent or cure
+    E. Glycemic index compared with white rice. 
+    F. Best time to take 
+    G. Preparation and consumption
+    H. Contraindications of {prompt}"""
 
     st.session_state.messages.append({"role": "user", "content": f"{task_requirements}"})
 
