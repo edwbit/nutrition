@@ -83,9 +83,10 @@ if prompt := st.chat_input("Type the vegetable or fruit name"):
     C. Table of Medicinal Properties
     D. Table of Diseases it can prevent or cure
     E. Glycemic index compared with white rice. 
-    F. Best time to take 
-    G. Preparation and consumption
-    H. Contraindications of {prompt}"""
+    F. Best time to take
+    G. PH level (acidic, neutral, alkaline)
+    H. Preparation and consumption
+    I. Contraindications of {prompt}"""
 
     st.session_state.messages.append({"role": "user", "content": f"{task_requirements}"})
 
