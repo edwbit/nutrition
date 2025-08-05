@@ -27,8 +27,8 @@ if "selected_model" not in st.session_state:
 
 # Define model details
 models = {
-    "openai/gpt-oss-120b": {"name": "openai/gpt-oss-120b", "tokens":32,766},
-    "moonshotai/kimi-k2-instruct": {"name": "moonshotai/kimi-k2-instruct", "tokens":16,384},
+    "openai/gpt-oss-120b": {"name": "openai/gpt-oss-120b", "tokens":32766},
+    "moonshotai/kimi-k2-instruct": {"name": "moonshotai/kimi-k2-instruct", "tokens":16384},
     "qwen/qwen3-32b": {"name": "qwen/qwen3-32b", "tokens": 40960},
     "meta-llama/llama-4-maverick-17b-128e-instruct" : {"name": "meta-llama/llama-4-maverick-17b-128e-instruct", "tokens": 8192},
 }
